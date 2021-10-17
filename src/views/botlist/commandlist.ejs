@@ -1,0 +1,40 @@
+<%- include('../parts/head', {bot, user, path}) %>
+
+<title>Rules | Discord Bots</title>
+<style>
+strong {
+color: var(--body-text)!important;
+}
+</style>
+<div class="container px-3 mt-2 pt-5">
+    <div class="container px-3 content is-widescreen pt-5">
+        <div class="bg-vote-disbots pt-5">
+            <p class="is-size-4" style="text-decoration: underline;">DTL Bot Commands</p>
+            <p style="color:white">The bot can only be used in the support server.</p>
+            <p style="text-align: none;"class="text-muted">
+&nbsp;&nbsp;<strong>botinfo -</strong> Shows a detailed information of a bot, must be on the botlist.<br>
+&nbsp;&nbsp;<strong>bots -</strong> Shows all the bots on the list, only approved ones.<br>
+&nbsp;&nbsp;<strong>botvote - </strong> Vote any bot on the server manually with a command.<br>
+&nbsp;&nbsp;<strong>ping -</strong> Bot's MS Ping.<br>
+&nbsp;&nbsp;<strong>topvoted -</strong> Bots with the most votes will be displayed.<br>
+ </p>
+            <br>
+            <br>
+            <br>
+             <p class="is-size-4" style="text-decoration: underline;">DTL Servers Commands</p>
+                <p style="color:white">The bot can be invited to any server.</p>
+            <p style="text-align: none;"class="text-muted">
+&nbsp;&nbsp;<strong>botinfo -</strong> Shows a detailed information of a bot, must be on the botlist.<br>
+&nbsp;&nbsp;<strong>bump -</strong> Bump the server, every 60 minutes.<br>
+&nbsp;&nbsp;<strong>link - </strong> Detailed information about the server, also the server link on serverlist.<br>
+&nbsp;&nbsp;<strong>vote -</strong> Vote the server, every 60 minutes.<br>
+&nbsp;&nbsp;<strong>profile -</strong> Shows your profile information, also shows your bots, servers if you own them.<br>
+ </p>
+        </div>
+    </div>
+    <center>
+    <button onclick="location.href='/addbot'" class="btn btn-disbots"><i class="fas fa-home"></i>&nbsp;Home</button>
+    </center>
+</div>
+
+<%- include('../parts/foot') %>

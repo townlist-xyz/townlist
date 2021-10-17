@@ -1,0 +1,33 @@
+<%- include('parts/head', {bot, user, path}) %>
+<div class="container px-3 mt-2 pt-5">
+    <center>
+    <div class="container px-3 content is-widescreen pt-5">
+        <div class="bg-vote-disbots pt-5">
+            <div class="botImg-voteArea mt-5">
+                <img style="border-radius: 10px;" onError="imgError(this);"raggable="false" src="https://cdn.discordapp.com/attachments/891226286587015223/893754393911001118/image0.png" width="100" height="100">
+            </div>
+            	<h3 translate="no" class="has-text-white is-size-5 text-uppercase" style="opacity: 60%; margin-bottom: -3%;">Redirecting To</h3>
+            	<h3 translate="no" class="has-text-white is-size-3" style="margin-bottom: 10px;">Town List Support</h3>
+            <br>
+            <br>
+            	<div class="countdown is-size-4"></div>
+        </div>
+    </div>
+    </center>
+</div>
+
+<script>
+var timer2 = "6";
+var interval = setInterval(function() {
+  var seconds = parseInt(timer2, 10);
+  --seconds;
+  if(seconds < 1) {
+  	window.location.href = 'https://discord.gg/4zBB2tsXjH';
+  	$('.countdown').html('Redirecting...');
+  	return clearInterval(interval);
+  }
+  $('.countdown').html(seconds);
+  timer2 = seconds;
+}, 1000);
+</script>
+<%- include('parts/foot') %>

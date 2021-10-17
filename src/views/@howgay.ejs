@@ -1,0 +1,36 @@
+<head>
+<head><meta property=og:site_name content="Powered by townlist.xyz"><meta property=og:image:width content=50><meta property=og:image:height content=50><meta property=og:title content=Howgay><meta property=og:description content="Howgay Discord Bot will tell you how gay you are on a scale 1 to 100%."><meta property=og:image content=https://cdn.discordapp.com/avatars/876569820626313226/ed19cffbcb901fde2321b6562fc2828c.webp></head>
+</head>
+<%- include('parts/head', {bot, user, path}) %>
+<div class="container px-3 mt-2 pt-5">
+    <center>
+    <div class="container px-3 content is-widescreen pt-5">
+        <div class="bg-vote-disbots pt-5">
+            <div class="botImg-voteArea mt-5">
+                <img style="border-radius: 10px;" onError="imgError(this);"raggable="false" src="https://cdn.discordapp.com/avatars/876569820626313226/ed19cffbcb901fde2321b6562fc2828c.webp" width="100" height="100">
+            </div>
+            	<h3 translate="no" class="has-text-white is-size-5 text-uppercase" style="opacity: 60%; margin-bottom: -3%;">Redirecting To</h3>
+            	<h3 translate="no" class="has-text-white is-size-3" style="margin-bottom: 10px;">Howgay</h3>
+            <br>
+            <br>
+            	<div class="countdown is-size-4"></div>
+        </div>
+    </div>
+    </center>
+</div>
+
+<script>
+var timer2 = "2";
+var interval = setInterval(function() {
+  var seconds = parseInt(timer2, 10);
+  --seconds;
+  if(seconds < 1) {
+  	window.location.href = 'https://townlist.xyz/bot/876569820626313226';
+  	$('.countdown').html('Redirecting...');
+  	return clearInterval(interval);
+  }
+  $('.countdown').html(seconds);
+  timer2 = seconds;
+}, 1000);
+</script>
+<%- include('parts/foot') %>

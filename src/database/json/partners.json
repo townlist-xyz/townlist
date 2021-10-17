@@ -1,0 +1,31 @@
+{
+  "partners": [
+    {
+      "code": "833396638429",
+      "icon": "https://cdn.discordapp.com/attachments/896472733720903690/896597125285163028/logo.png",
+      "ownerID": "399718367335940117",
+      "serverName": "Pluto's World",
+      "website": "https://plutothe.dev",
+      "background": "https://cdn.discordapp.com/attachments/884276380689375254/896597323239546880/Pluto_Banner.png",
+      "description": "Welcome to Pluto's World a source discord bot bringing items to the community as requested. Commissions still exist. So why not come check us out?"
+    },
+    {
+      "code": "638524292417",
+      "icon": "https://cdn.discordapp.com/attachments/896602644750139404/896616483684225054/woohoo.png",
+      "ownerID": "704094587836301392",
+      "serverName": "Hotel Hyperz",
+      "website": "https://hyperz.net/",
+      "background": "https://cdn.discordapp.com/attachments/896602644750139404/896616483684225054/woohoo.png",
+      "description": "My name is Hyperz I am a freelance designer. I am a software programmer and YouTuber, I have always had a passion for working with and solving real life problems!"
+    },
+    {
+      "code": "672725355551",
+      "icon": "https://cdn.discordapp.com/avatars/554572149428453388/854364db67a4017b4dfb2f1347c6ff99.png?size=4096",
+      "ownerID": "159926571619188737",
+      "serverName": "KaoBot",
+      "website": "https://kaobot.xyz/",
+      "background": "https://cdn.discordapp.com/banners/428784255984730112/23c7238b91db21e9e64c4a3666b8b451.jpg?size=4096",
+      "description": "KaoBot is a multipurpose bot with a ever-growing list of commands. Originally intended to be a simple Kaomoji bot it now has evolved way beyond that!"
+    }
+  ]
+}
