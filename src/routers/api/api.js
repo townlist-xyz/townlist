@@ -3,7 +3,7 @@ const botsdata = require("../../database/models/botlist/bots.js");
 const channels = global.config.server.channels,
       roles = global.config.server.roles;
 
-console.log("[disbots.xyz]: Api router loaded.");
+console.log("[townlist.xyz]: Api router loaded.");
 
 app.get("/api", async (req, res) => {
     res.json({
@@ -25,7 +25,6 @@ app.get("/api/bots/:botID", async (req, res) => {
         discrim: botinfo.discrim,
         shortDesc: botinfo.shortDesc,
         prefix: botinfo.prefix,
-        language: botinfo.language,
         votes: botinfo.votes,
         ownerID: botinfo.ownerID,
         owner: botinfo.ownerName,

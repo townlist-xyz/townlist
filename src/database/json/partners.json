@@ -26,6 +26,15 @@
       "website": "https://kaobot.xyz/",
       "background": "https://cdn.discordapp.com/banners/428784255984730112/23c7238b91db21e9e64c4a3666b8b451.jpg?size=4096",
       "description": "KaoBot is a multipurpose bot with a ever-growing list of commands. Originally intended to be a simple Kaomoji bot it now has evolved way beyond that!"
+    },
+    {
+      "code": "473441537531",
+      "icon": "https://images-ext-1.discordapp.net/external/ilZeQH42X5HhsLfCyYeg3DWxE9Q3j_wUCLrM7mzKgmw/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/814441758037377045/f335ed9c5c2df7712f30423806396d54.png",
+      "ownerID": "437570660441784320",
+      "serverName": "Galaxies Official",
+      "website": "https://galaxies-bot.xyz/",
+      "background": "https://cdn.discordapp.com/attachments/898964710974705718/899272943463432212/galaxies1-1.png",
+      "description": "Galaxies Support is a 24/7 Service to guide you throughout our lovely bot!"
     }
   ]
 }

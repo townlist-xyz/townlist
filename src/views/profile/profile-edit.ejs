@@ -117,7 +117,7 @@ input[type="text"]:disabled {
      title: 'Success',
      closeOnConfirm: false,
      text: urlParams.get('message'),
-     footer: 'Copyright 2021 &copy listing.discordtownshop.com - All right reserved.'
+     footer: 'Copyright 2021 &copy townlist.xyz - All right reserved.'
     }).then((result) => {
   if (result.isConfirmed) {
     window.location.href = '/user/<%=req.params.userID%>';
@@ -129,7 +129,7 @@ input[type="text"]:disabled {
      icon: 'error',
      title: 'Error',
      text: urlParams.get('message'),
-     footer: 'Copyright 2021 &copy listing.discordtownshop.com - All right reserved.'
+     footer: 'Copyright 2021 &copy townlist.xyz - All right reserved.'
     }).then((result) => {
   if (result.isConfirmed) {
     window.location.href = '/user/<%=req.params.userID%>/edit';
