@@ -68,6 +68,15 @@ input[type="text"]:disabled {
                     <input type="text" name="support" id="support" value="<%= botdata.support %>" class="form-control" placeholder=""/>
                   <% } %>
               </div>
+                <div class="form-group">
+                <label><i class="fab fa-discord"></i> Webhook URL</label>
+                <% if(!botdata.webhookurl) { %>
+                    <input type="text" name="support" id="support" class="form-control" placeholder=""/>
+                  <% } else { %>
+                    <input type="text" name="support" id="webhookurl" value="<%= botdata.webhookurl %>" class="form-control" placeholder=""/>
+                  <% } %>
+              </div>
+
               <div class="form-group">
                 <label><i class="fab fa-discord"></i> Invite</label>
                 <% if(!botdata.invite) { %>

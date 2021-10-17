@@ -50,6 +50,7 @@ app.post("/bot/:botID/edit", global.checkAuth, async (req, res) => {
             invite: rBody['invite'],
             coowners: String(rBody['coowners']).split(','),
             backURL: rBody['background'],
+            webhookurl: rBody['webhookurl'] ? rBody['webhookurl'] : ""
         }
     }, function(err, docs) {})
     client.users.fetch(req.params.botID).then(a => {

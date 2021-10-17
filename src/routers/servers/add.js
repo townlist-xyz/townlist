@@ -45,7 +45,7 @@ app.post("/add", global.checkAuth, async (req,res) => {
             {
                 id: guildID,
                 name: guild.name,
-                InviteLink: req.body.invite,
+                inviteurl: req.body.invite,
                 icon: guild.iconURL({ dynamic: true }),
                 status: "Approved",
                 premium: "None",

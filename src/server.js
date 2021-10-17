@@ -208,13 +208,13 @@ module.exports = async (client) => {
         dynamic: true
       })).setThumbnail(a.avatarURL({
         dynamic: true
-      })).setColor("2f3136").setDescription(`[**${a.username}**#${a.discriminator}](https://https://townlist.xyz/user/${a.id}) tried logging in but they were blocked from the website.`).addField("Username", a.username).addField("User ID", a.id).addField("User Discriminator", a.discriminator))
+      })).setColor("2f3136").setDescription(`[**${a.username}**#${a.discriminator}](https://townlist.xyz/user/${a.id}) tried logging in but they were blocked from the website.`).addField("Username", a.username).addField("User ID", a.id).addField("User Discriminator", a.discriminator))
     })
     req.session.destroy(() => {
       res.json({
         login: false,
         message: "You have been blocked from DTL.",
-        logout: true
+        logout: false
       })
       req.logout();
     });
@@ -257,7 +257,7 @@ const checkAdmin = async (req, res, next) => {
     if (client.guilds.cache.get(config.server.id).members.cache.get(req.user.id).roles.cache.get(roles.yonetici) || client.guilds.cache.get(config.server.id).members.cache.get(req.user.id).roles.cache.get(roles.moderator)) {
       next();
     } else {
-      res.redirect("/error?code=403&message=You is not competent to do this.")
+      res.redirect("/error?code=403&message=You are not competent to do this.")
     }
   } else {
     req.session.backURL = req.url;
@@ -950,6 +950,7 @@ app.use("/", require('./routers/botlist/mini.js'))
 app.use("/", require('./routers/botlist/vote.js'))
 app.use("/", require('./routers/botlist/bot/view.js'))
 app.use("/", require('./routers/botlist/bot/announcements.js'))
+app.use("/", require('./routers/botlist/bot/rewards.js'))
 app.use("/", require('./routers/botlist/bot/edit.js'))
 app.use("/", require('./routers/botlist/bot/analytics.js'))
 app.use("/", require('./routers/botlist/apps/cerificate-app.js'))

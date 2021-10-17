@@ -31,7 +31,7 @@ console.log("[disbots.xyz]: Botlist/Add Bot router loaded.");
           if(String(rBody['coowners']).split(',').length > 3) return res.redirect("?error=true&message=You can add up to 3 CO-Owners..")
           if(String(rBody['coowners']).split(',').includes(req.user.id)) return res.redirect("?error=true&message=You cannot add yourself to other CO-Owners.");
       }
-      await new botsdata({
+          await new botsdata({
            botID: rBody['botID'], 
            ownerID: req.user.id,
            ownerName: req.user.usename,
@@ -48,7 +48,9 @@ console.log("[disbots.xyz]: Botlist/Add Bot router loaded.");
            promoted: "None",
            token: makeToken(128),
            rawld: rBody['rawld'],
+           webhookurl: rBody['webhookurl'] ? rBody['webhookurl'] : ""
       }).save()
+      
       if(rBody['background']) {
           await botsdata.findOneAndUpdate({botID: rBody['botID']},{$set: {backURL: rBody['background']}}, function (err,docs) {})
       }
