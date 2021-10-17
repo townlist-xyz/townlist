@@ -32,6 +32,6 @@ boosted: String,
 promoted: String,
 rawld: String,
 vanity: String,
+webhookurl: { type: String }
 });
-
 module.exports = mongoose.model("bots", hm);
