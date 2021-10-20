@@ -326,4 +326,4 @@ app.get("/bot/:botID/delete", async (req, res) => {
         return res.redirect("/error?code=404&message=You entered an invalid bot id.");
     }
 })
-module.exports = app;
+module.exports = app;ts = app;

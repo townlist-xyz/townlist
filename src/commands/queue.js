@@ -3,7 +3,9 @@ const emoji = require('../../emoji.json')
 const { MessageEmbed } = require("discord.js")
 const botdata = require("../database/models/botlist/bots.js")
 module.exports.run = async (client,message,args) => {
-   if (!message.member.roles.cache.some((role) => role.name === 'Bot Tester')) return message.channel.send(new MessageEmbed
+   if (!message.member.roles.cache.some((role) => role.name === 'Bot Tester')) return message.channel.send(new MessageEmbed()
+
+  
    .setDescription(`${emoji.error} You are not a bot tester, therefore you can't run this command.`)
    .setColor('2f3136')
    );

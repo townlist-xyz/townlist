@@ -1,44 +1,46 @@
 <%- include('./meta.ejs') %>
-<head>
-<script>
-    document.onmousedown=disableclick;
-status="Stop trying to steal code";
-function disableclick(event)
-{
-  if(event.button==2)
-   {
-     alert(status);
-     return false;    
-   }
+<style>
+.bg-indigo-600 {
+    --tw-bg-opacity: 1;
+    background: linear-gradient(-45deg, #ee7752, rgba(79,70,229, 1), #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
-    document.onkeydown = function (e) {
-        status="Stop trying to steal code";
-        if (event.keyCode == 123) {
-            return false;
-        }
-        if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
-            alert(status);
-            return false;
-        }
-        if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
-            alert(status);
-            return false;
-        }
-        if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
-            alert(status);
-            return false;
-        }
-        if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
-            alert(status);
-            return false;
-        }
-        if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
-            alert(status);
-            return false;
-        }
-        
-    }
-</script>
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+</style>
+<div class="bg-indigo-600">
+  <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+    <div class="is-flex is-align-items-center justify-content-between is-flex-wrap">
+      <div class="w-0 is-flex-grow-1" style="align-items: center">
+        <span class="is-flex p-2 rounded-lg bg-indigo-600" style="opacity: 0%!important">
+         
+        </span>
+        <p class="ml-3 font-medium text-white truncate">
+          <span>
+            <span class="badge badge-danger is-size-6">EVENT</span>&nbsp;100 bots very soon, add your bot now and get a chance to win nitro boost.
+          </span>
+        </p>
+      </div>
+      <div class="is-flex justify-content-end">
+        <a href="/dc" class="btn btn-disbots">
+          Join Our Discord
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<head>
+
 
 
     <nav class="navbar navbar-expand-lg navbar-dark p-2 pl-4 pr-4 bg-disbots z">
@@ -59,11 +61,8 @@ function disableclick(event)
               <a title="DTL" class="nav-link" href="/bots"><i class="fad fa-robot mr-1"></i> Bots</a>
             </li>
 
-            <% if(user) {%>
-            <li class="nav-item">
-                <a title="DTL" class="nav-link" href="/addbot"><i class="fad fa-plus mr-1"></i> Add Bot</a>
-            </li>
-            <% } %>
+      
+  
             <li class="nav-item">
                 <a title="DTL" class="nav-link" href="/servers"><i class="fad fa-server mr-1"></i>Servers</a>
             </li>
@@ -81,32 +80,21 @@ function disableclick(event)
                 <a title="DTL" class="nav-link" href="https://discord.com/api/oauth2/authorize?client_id=871339653712723998&permissions=533047278785&scope=bot"><i class="fad fa-robot mr-1"></i> Invite DTL</a>
             </li>
             <% if(user) {%>
-            <li class="nav-item"> 
-                <a title="DTL" class="nav-link" href="/server/add"><i class="fad fa-plus mr-1"></i> Add Server</a>
-            </li>
+          
             <% } %>
             <% } %>
         <li class="nav-item dropdown" style="font-family: Arial, FontAwesome; z-index: 999999999; width: 100px;">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fad fa-ellipsis-h"></i>&nbsp;More
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <div title="Town" class="dropdown-menu animate slideIn" style="max-width:220px!important" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" onclick="location.href='/partners'"><i class="fad fa-handshake"></i>&nbsp;Partners</a>
 
           <a class="dropdown-item" onclick="location.href='https://www.npmjs.com/package/api-townlist-xyz'"><i class="fab fa-npm"></i></i> NPM API</a> 
-            <a class="dropdown-item" onclick="location.href='/promotion'"><i class="fad fa-stars"></i> Promotions</a>
-            <a class="dropdown-item" onclick="location.href='certification'"><i class="fad fa-badge-check"></i>&nbsp;Certification</a>
+            <a class="dropdown-item" onclick="location.href='/dc'"><i class="fad fa-stars"></i> Support</a>
         
-            <% if(user) { %>
-                <% 
-                let guild = bot.guilds.cache.get(config.server.id).members.cache.get(user.id);
-                if(guild) {
-                if(guild.roles.cache.get(roles.administrator) || guild.roles.cache.get(roles.moderator)) {
-                %>
-                    <a title="DTL" class="dropdown-item" href="/admin"><i class="fad fa-magic mr-1"></i> Admin Panel</a>
-
-                <% }} %>
-            <% } %>
+        
+           
             </div>
         </li>
           </ul>
@@ -119,7 +107,7 @@ function disableclick(event)
                   <a class="btn btn-disbots dropdown-toggle" href="#" id="navbarDropdown" translate="no" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fad fa-globe"></i>&nbsp;Language
                   </a>
-                <div class="dropdown-menu dropdown-menu-right" style="max-width:220px!important;">
+         <div title="Town" class="dropdown-menu animate slideIn" style="max-width:220px!important" aria-labelledby="navbarDropdown">
             <% languages.map(x => { %>
                 <a href="#" translate="no" onclick="doGTranslate('en|<%= x.code %>')" title="DTL" class="dropdown-item">
                 <img src="https://www.countryflags.io/<%= x.flag %>/flat/32.png">
@@ -131,11 +119,37 @@ function disableclick(event)
           &nbsp;
             <% if(user) {%>
               <li class="nav-item dropdown">
-                  <a class="btn btn-disbots" onclick='location.href = "/user/<%= user.id %>"' translate="no">
-                  <img width="24" style="border-radius: 50%" src='https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png'>
-                    <%=user.username%><small>#<%=user.discriminator%> <div class="dropdown-menu dropdown-menu-right" style="max-width:220px!important;"></small>
-                  </a>
-              </li>
+              
+                        <a class="btn btn-disbots dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <img width="24" class="profile-image" style="border-radius: 50%" src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>" translate="no"> <%= user.username %>
+                          
+                        </a>
+                          <br>
+                        <br>
+                        <div title="Town" class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown" style="max-width:220px!important;">
+                      
+                
+                        
+                          <a title="Town" class="dropdown-item" href="/user/<%=user.id%>"><i class="fad fa-user"></i>&nbsp;Profile</a>
+                          <a title="Town" class="dropdown-item" href="/certification"><i class="fad fa-badge-check"></i>&nbsp;Certification</a>
+                          
+                <a title="DTL" class="dropdown-item" href="/server/add"><i class="fad fa-plus mr-1"></i> Add Server</a>
+           
+                          <a title="Town" class="dropdown-item" href="/addbot"><i class="fad fa-paper-plane"></i>&nbsp;Submit Bot</a>
+                            <% if(user) { %>
+                <% 
+                let guild = bot.guilds.cache.get(config.server.id).members.cache.get(user.id);
+                if(guild) {
+                if(guild.roles.cache.get(roles.administrator) || guild.roles.cache.get(roles.moderator)) {
+                %>
+                    <a title="DTL" class="dropdown-item" href="/admin"><i class="fad fa-magic mr-1"></i> Admin Panel</a>
+                <% }} %>
+            <% } %>
+                        
+                          <div class="dropdown-divider"></div>
+                          <a title="Town" class="dropdown-item" href="/logout"><i class="fad fa-sign-out"></i>&nbsp;Logout</a>
+                        </div>
+                      </li>
             <% } else { %>
             <li class="nav-item">
                 <a title="DTL" class="btn btn-disbots" href="/login-confirm"><i class="fad fa-sign-in mr-1"></i> Login</a>

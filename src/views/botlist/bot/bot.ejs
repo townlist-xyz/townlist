@@ -239,8 +239,11 @@
         </div>
       </div>
       <% if(botdata.status == "Approved") { %>
-      <hr style="opacity: 5%;">
 
+      <hr style="opacity: 5%;">
+      <h4 class="has-text-white">
+        Ratings & Reviews
+      </h4>
       <%
       if(req.user) { 
       if(botdata.ownerID != req.user.id && !botdata.coowners.includes(req.user.id)) {

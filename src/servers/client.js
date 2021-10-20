@@ -4,6 +4,7 @@ const { MessageEmbed } = require('discord.js')
 const { Client, Collection } = require("discord.js");
 const emoji = require('../../emoji.json')
 const serverClient = global.clientSL;
+const db  = require("quick.db")
 const config = global.config;
 const fs = require("fs");
 const { createCanvas } = require('canvas')
@@ -11,8 +12,9 @@ const { MessageButton } = require("discord-buttons");
 
 require('discord-buttons')(serverClient);
 serverClient.on('clickButton', async (button) => {
-    button.defer(true);
+    if (button) button.defer(true);
 });
+
 
 require('events').EventEmitter.prototype._maxListeners = 100;
 serverClient.commands = new Discord.Collection();
@@ -30,6 +32,7 @@ fs.readdir("./src/servers/commands/", (err, files) => {
 });
 let serverPrefix = config.bot.servers.prefix;
 serverClient.on('message', async message => {
+  
   if (message.author.bot) return;
 
   if (message.content.startsWith(serverPrefix)) {
@@ -50,7 +53,7 @@ serverClient.on('ready', async () => {
   console.log("[disbots.xyz/servers]: Bot successfully connected as " + serverClient.user.tag + ".");
   let serversdata = require("../../src/database/models/servers/server.js");
   const servers = await serversdata.find();
-  serverClient.user.setPresence({ activity: { type: 'STREAMING', name: '$help | ' + servers.length + ' servers' }, status: "dnd" });
+  serverClient.user.setPresence({ activity: { type: 'STREAMING', name: 's?help | ' + servers.length + ' servers' }, status: "STREAMING" });
 
       })
       
@@ -72,20 +75,59 @@ const support = new Discord.MessageEmbed()
 .setColor(`2f3136`)
 
 serverClient.on('message', message => {
-    if (message.content.startsWith('$help')) {
+    if (message.content.startsWith('s?help')) {
  
      const embed = new MessageEmbed()
+              
+              
 	.setColor('2f3136')
-	.setTitle(`${emoji.pen} **DTL - Commands**`)
-	.setURL('https://townlist.xyz/commandlist')
+	.setTitle(`${emoji.pen} DTL Commands`)
+   .addField(`${emoji.link} External Links` , `[All commands](https://townlist.xyz/commandlist) | [Support Server](https://discord.gg/townlist)`)
+                .addField(`${emoji.search} Voting/Bumping Rules` , `Using \`external (alt)\` accounts to vote is against our rules.`)
 	.setDescription(`> These are all the commands of DTL, if you find any bugs make sure to report them to our team.`)
   	.addField(`**link**`, `Detailed information about the server, also the server link on serverlist.`)
 	.addField(`**bump**`, `Bump the server, every 60 minutes.`)
       	.addField(`**profile**`, `Shows your profile information, also shows your bots, servers if you own them.`)
               	.addField(`**vote**`, `Vote the server, every 60 minutes.`)
 	.setTimestamp()
-	.setFooter(':copyright: Townlist')
+     .setFooter(
+                    `Requested by ${message.author.tag}`,
+                    message.author.displayAvatarURL({
+                        dynamic: true
+                    })
+                )
+                .setTimestamp()
+                .setThumbnail(serverClient.user.displayAvatarURL({
+                    dynamic: true
+                }))
           message.channel.send({ embed: embed, buttons: [ web, srvr ]})
+    }
+})
+
+
+serverClient.on('message', message => {
+    if (message.content.startsWith('$bump')) {
+ 
+     const embed = new MessageEmbed()
+              
+              
+	.setColor('2f3136')
+	.setTitle(`${emoji.success} My prefix changed, from now on you can type \`s?bump\` and \`s?vote\`.`)
+  
+          message.channel.send(embed)
+    }
+})
+
+serverClient.on('message', message => {
+    if (message.content.startsWith('$vote')) {
+ 
+     const embed = new MessageEmbed()
+              
+              
+	.setColor('2f3136')
+	.setTitle(`${emoji.success} My prefix has changed to \`s?\`, from now on you can type \`s?bump\` and \`s?vote\`.`)
+  
+          message.channel.send(embed)
     }
 })
 
@@ -110,6 +152,6 @@ serverClient.makeid = length => {
     return text;
 }
 
-            
+  
 
 module.exports = serverClient;

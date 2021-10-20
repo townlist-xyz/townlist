@@ -1,0 +1,43 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+<%- include('../../parts/edit-head') %>
+
+
+<title>Rewards | Discord Bots</title>
+<style>
+strong {
+color: var(--body-text)!important;
+}
+</style>
+<div class="container px-3 mt-2 pt-5">
+    <div class="container px-3 content is-widescreen pt-5">
+        <div class="bg-vote-disbots pt-5">
+          <center>   <p class="is-size-4" style="text-decoration:;font-size:3vw;">Rewards</p></center>
+            <p style="color:white;text-align: center;font-size:21px">Want to earn rewards for getting certain amounts of votes?<br>You can now get rewards for reaching votes.<br>Rewards are listed down below.</p>
+            <center>
+       
+             <a class="btn btn-disbots" href="#">
+                    <i class="fad fa-globe"></i>&nbsp;<%= botdata.votes || "0" %> Votes
+                  </a>
+              </a>
+              </center>
+              <br>
+            <p style="text-align: none;"class="text-muted">
+&nbsp;&nbsp;<strong>120 Votes -</strong>  5$ / nitro classic<br>            <p style="text-align: none;"class="text-muted">
+&nbsp;&nbsp;<strong>180 Votes -</strong>  10$ / nitro classic<br>            <p style="text-align: none;"class="text-muted">
+&nbsp;&nbsp;<strong>250 Votes -</strong>  20$ / nitro classic<br>            <p style="text-align: none;"class="text-muted">
+&nbsp;&nbsp;<strong>350 Votes -</strong>  25$ / nitro classic<br>            <p style="text-align: none;"class="text-muted">
+&nbsp;&nbsp;<strong>500 Votes -</strong>  50$ / nitro classic<br></p>
+            <br>
+            <br>
+            <br>
+               <center>
+    <button onclick="location.href='/dc'" class="btn btn-disbots"><i class="fad fa-check"></i>&nbsp;Claim Rewards</button>
+    </center>
+        </div>
+    </div>
+    <center>
+
+    </center>
+
+</div>
+

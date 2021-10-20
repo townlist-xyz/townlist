@@ -6,7 +6,7 @@ module.exports = {
     mongourl: "mongodb+srv://desixred:Ilovemykm@desixred.b8mot.mongodb.net/giveaway?retryWrites=true&w=majority",
     servers: {
       token: "ODcxMzM5NjUzNzEyNzIzOTk4.YQZ4Sg.RNKGX81MVNPPR6YY9Fwqu-e9C08",
-      prefix: "$"
+      prefix: "s?"
     }
   },
 

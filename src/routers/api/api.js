@@ -8,7 +8,7 @@ console.log("[disbots.xyz]: Api router loaded.");
 app.get("/api", async (req, res) => {
     res.json({
         "Hello": "World",
-        "Template By": "DTL Team"
+        "Template By": "Disbots Team"
         });
 });
 app.get("/api/bots/:botID", async (req, res) => {
@@ -25,7 +25,6 @@ app.get("/api/bots/:botID", async (req, res) => {
         discrim: botinfo.discrim,
         shortDesc: botinfo.shortDesc,
         prefix: botinfo.prefix,
-        language: botinfo.language,
         votes: botinfo.votes,
         ownerID: botinfo.ownerID,
         owner: botinfo.ownerName,

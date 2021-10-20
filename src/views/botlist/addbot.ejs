@@ -20,6 +20,13 @@ input[type="text"]:disabled {
   border: none;
   cursor: not-allowed;
 }
+
+<style>
+.vl {
+  border-left: 6px solid green;
+  height: 500px;
+}
+</style>
 </style>
   <br><br>
 <div style="background-color: var(--form-background);" class="container p-4">
@@ -32,10 +39,15 @@ input[type="text"]:disabled {
         txt.keyup(func).blur(func);
     });
   </script>
-  <form method="POST">
+   <form method="POST">
      <div class="row">
           <div class="col-md-6">
-              <div class="form-group">
+         <div>
+    <p style="float: left;"><img src="http://townlist.xyz/img/logo.png" height="50px" width="50px"></p>   <div class="vl"></div>  <h1 id="botlistitle">Bot Submission</h1>
+</div>
+<br>
+
+  <div class="form-group">
                 <label><i class="fad fa-fingerprint"></i> Bot ID<span style="color: rgb(175, 22, 22)">*</span></label>
                   <input type="text" name="botID" id="botID" class="form-control" placeholder="746673633551974456" required="required" value="" />
               </div>
