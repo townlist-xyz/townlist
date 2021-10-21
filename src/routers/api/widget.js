@@ -30,9 +30,9 @@ router.get("/api/widget/:bot_id", async function(req, res) {
         ctx.fillStyle = "white";
         ctx.fillText(bot.username, 100, 38);
 
-        ctx.font = "12px monospace";
-        ctx.fillStyle = "white";
-        wrapText(ctx, bot.shortDesc, 100, 58, 275, 20);
+        // ctx.font = "12px monospace";
+        // ctx.fillStyle = "white";
+        // wrapText(ctx, bot.shortDesc, 100, 58, 275, 20);
 
         ctx.font = "16px monospace";
         ctx.fillStyle = "white";
@@ -53,7 +53,7 @@ router.get("/api/widget/:bot_id", async function(req, res) {
             var testLine = line + words[n] + ' ';
             var metrics = context.measureText(testLine);
             var testWidth = metrics.width;
-            if (line0 > 12) {
+            if (line0 > 11) {
                 line = "..."
                 context.fillText(line, x, y)
                 continue;
