@@ -32,7 +32,7 @@ router.get("/api/widget/:bot_id", async function(req, res) {
 
         ctx.font = "12px monospace";
         ctx.fillStyle = "white";
-        ctx.fillText(bot.shortDesc, 100, 58);
+        wrapText(ctx, bot.shortDesc, 100, 58, 275, 20);
 
         ctx.font = "16px monospace";
         ctx.fillStyle = "white";
@@ -44,6 +44,36 @@ router.get("/api/widget/:bot_id", async function(req, res) {
     } catch (error) {
         res.status(500).send(`Internal Server Error: ${error.message}`);
     }
+
+    function wrapText(context, text, x, y, maxWidth, lineHeight) {
+        var words = text.split(' ');
+        var line = '';
+        var line0 = 0;
+        for(var n = 0; n < words.length; n++) {
+            var testLine = line + words[n] + ' ';
+            var metrics = context.measureText(testLine);
+            var testWidth = metrics.width;
+            if (line0 > 12) {
+                line = "..."
+                context.fillText(line, x, y)
+                continue;
+            }
+            if (testWidth > maxWidth && n > 0) {
+                context.fillText(line, x, y);
+                
+                line = words[n] + ' ';
+                line0++
+                y += lineHeight;
+                
+            }
+            else {
+                line0++
+                line = testLine;
+            }
+        }
+        context.fillText(line, x, y);
+      }
+      
 });
 
 module.exports = router;
