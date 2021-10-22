@@ -5,7 +5,7 @@
     <div class="container px-3 mb-5 mt-1">
       <div class="mb-3 mx-auto">
        <span class="icon-section" style="margin-top: -5%;float: right;">
-        <img  draggable="false" style="z-index: -1!important;" class="section-img" title="DTL.xyz"  src="../img/logo.png" width="320" alt="Discord Bots | Discord Bot List">
+        <img  draggable="false" style="z-index: -1!important;" class="section-img" title="townlist.xyz"  src="../img/logo.png" width="320" alt="Discord Bots | Discord Bot List">
         </span>
         
         <h1 class="title" translate="no" style="font-weight: 800;color: #fff">Town List</h1>
@@ -128,7 +128,7 @@
     <p class="has-text-white title is-large"><i class="fad fa-bomb bodyIcon"></i>&nbsp;Last Bumped Servers</p>
     <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the bump date they received.</p>
     </center>
-    <div class="columns is-multiline is-desktop is-variable is-7 pt-5">
+    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto mx-auto">
      <% data.filter(a => bot.guilds.cache.get(a.id)).sort((a, b) => b.bump - a.bump).slice(0, 6).map(a => {%>
     <% let guildCache = bot.guilds.cache.get(a.id) %>
 
@@ -145,10 +145,7 @@
             <span data-tooltip="Members" data-tooltip-location="left" class="badge badge-stats mt-1 w-100"><i class="fad fa-users"></i>&nbsp;<%= guildCache.memberCount > 999 ? guildCache.memberCount.toLocaleString().split(',')[0]+'k' : guildCache.memberCount %></span>
               </div>
             <p translate="no" class="card-title is-size-4"><%= a.name %>
-            <% if(guildCache.partnered === true) { %>
-              <span data-tooltip="Partnered Discord" data-tooltip-location="top">
-              <i class="fad fa-handshake bodyIcon"></i></span>
-            <% } %>
+            
             <% if(a.id == 891226286347923506) { %>
               <span data-tooltip="Official Server" data-tooltip-location="top">
               <i class="fad fa-server mr-1"></i></span>
@@ -160,8 +157,8 @@
             <p translate="no" class="card-text disbotsbotDesc"><%= a.shortDesc %></p>
           </div>
           <div class="card-footer">
-            <a title="disbots" href="/server/<%=a.id%>" class="btn  btn-bot">View</a>
-            <a title="disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot">Join</a>
+            <a title="disbots" href="/server/<%=a.id%>" class="btn  btn-bot"><i class="fad fa-arrow-right"></i>&nbsp;View</a>
+            <a title="disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot"><i class="fad fa-plus"></i>&nbsp;Join</a>
           </div>
         </div>
       </div>
@@ -173,7 +170,7 @@
 <center>
 <p class="has-text-white title is-large"><i class="fad fa-bahai has-text-success"></i>&nbsp;Premium Servers</p>
 </center>
-    <div class="columns is-multiline is-desktop is-variable is-7 pt-5">
+    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
      <%
         let promrandomBots = data.filter(a => a.premium == "Premium")
         promrandomBots.forEach((val, key) => {
@@ -203,10 +200,7 @@
             <span data-tooltip="Members" data-tooltip-location="left" class="badge badge-stats mt-1 w-100"><i class="fad fa-users"></i>&nbsp;<%= guildCache.memberCount > 999 ? guildCache.memberCount.toLocaleString().split(',')[0]+'k' : guildCache.memberCount %></span>
               </div>
             <p translate="no" class="card-title is-size-4"><%= guildCache.name %>
-            <% if(guildCache.partnered === true) { %>
-              <span data-tooltip="Partnered Discord" data-tooltip-location="top">
-              <i class="fad fa-handshake bodyIcon"></i></span>
-            <% } %>
+         
             <% if(a.id == 852825880271257611) { %>
               <span data-tooltip="Official Server" data-tooltip-location="top">
               <i class="fad fa-server mr-1"></i></span>
@@ -218,8 +212,8 @@
             <p translate="no" class="card-text disbotsbotDesc"><%= a.shortDesc %></p>
           </div>
           <div class="card-footer">
-            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot">View</a>
-            <a title="Disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot">Join</a>
+            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot"><i class="fad fa-arrow-right"></i>&nbsp;View</a>
+            <a title="Disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot"><i class="fad fa-plus"></i>&nbsp;Join</a>
           </div>
         </div>
       </div>
@@ -232,7 +226,7 @@
 <p class="has-text-white title is-large"><i class="fad fa-chevron-up bodyIcon"></i>&nbsp;Top Voted Servers</p>
     <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
     </center>
-    <div class="columns is-multiline is-desktop is-variable is-7 pt-5">
+    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
      <% data.filter(a => bot.guilds.cache.get(a.id)).sort((a, b) => b.votes - a.votes).slice(0, 6).map(a => {%>
      <% let guildCache = bot.guilds.cache.get(a.id) %>
       <div class="col-md-6 col-lg-4 pb-3">
@@ -248,10 +242,7 @@
             <span data-tooltip="Members" data-tooltip-location="left" class="badge badge-stats mt-1 w-100"><i class="fad fa-users"></i>&nbsp;<%= guildCache.memberCount > 999 ? guildCache.memberCount.toLocaleString().split(',')[0]+'k' : guildCache.memberCount %></span>
               </div>
             <p translate="no" class="card-title is-size-4"><%= a.name %>
-            <% if(guildCache.partnered === true) { %>
-              <span data-tooltip="Partnered Discord" data-tooltip-location="top">
-              <i class="fad fa-handshake bodyIcon"></i></span>
-            <% } %>
+            
             <% if(a.id == 852825880271257611) { %>
               <span data-tooltip="Official Server" data-tooltip-location="top">
               <i class="fad fa-server mr-1"></i></span>
@@ -263,8 +254,8 @@
             <p translate="no" class="card-text disbotsbotDesc"><%= a.shortDesc %></p>
           </div>
           <div class="card-footer">
-            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot">View</a>
-            <a title="Disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot">Join</a>
+            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot"><i class="fad fa-arrow-right"></i>&nbsp;View</a>
+            <a title="Disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot"><i class="fad fa-plus"></i>&nbsp;Join</a>
           </div>
         </div>
       </div>
@@ -277,7 +268,7 @@
     <p class="has-text-white title is-large"><i class="fad fa-chevron-up bodyIcon"></i>&nbsp;Top Bumped Servers</p>
     <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the bump count they received.</p>
     </center>
-    <div class="columns is-multiline is-desktop is-variable is-7 pt-5">
+    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
      <% data.filter(a => bot.guilds.cache.get(a.id)).sort((a, b) => b.bumps - a.bumps).slice(0, 6).map(a => {%>
      <% let guildCache = bot.guilds.cache.get(a.id) %>
       <div class="col-md-6 col-lg-4 pb-3">
@@ -293,10 +284,7 @@
             <span data-tooltip="Members" data-tooltip-location="left" class="badge badge-stats mt-1 w-100"><i class="fad fa-users"></i>&nbsp;<%= guildCache.memberCount > 999 ? guildCache.memberCount.toLocaleString().split(',')[0]+'k' : guildCache.memberCount %></span>
               </div>
             <p translate="no" class="card-title is-size-4"><%= a.name %>
-            <% if(guildCache.partnered === true) { %>
-              <span data-tooltip="Partnered Discord" data-tooltip-location="top">
-              <i class="fad fa-handshake bodyIcon"></i></span>
-            <% } %>
+       
             <% if(a.id == 852825880271257611) { %>
               <span data-tooltip="Official Server" data-tooltip-location="top">
               <i class="fad fa-server mr-1"></i></span>
@@ -308,8 +296,8 @@
             <p translate="no" class="card-text disbotsbotDesc"><%= a.shortDesc %></p>
           </div>
           <div class="card-footer">
-            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot">View</a>
-            <a title="Disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot">Join</a>
+            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot"><i class="fad fa-arrow-right"></i>&nbsp;View</a>
+            <a title="Disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot"><i class="fad fa-plus"></i>&nbsp;Join</a>
           </div>
         </div>
       </div>
@@ -323,7 +311,7 @@
     <p class="has-text-white title is-large"><i class="fad fa-code bodyIcon"></i>&nbsp;Development Servers</p>
     <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
     </center>
-    <div class="columns is-multiline is-desktop is-variable is-7 pt-5">
+    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
      <% data.filter(a => bot.guilds.cache.get(a.id) && a.tags.includes('Development')).sort((a, b) => b.votes - a.votes).slice(0, 6).map(a => {%>
      <% let guildCache = bot.guilds.cache.get(a.id) %>
       <div class="col-md-6 col-lg-4 pb-3">
@@ -339,10 +327,7 @@
             <span data-tooltip="Members" data-tooltip-location="left" class="badge badge-stats mt-1 w-100"><i class="fad fa-users"></i>&nbsp;<%= guildCache.memberCount > 999 ? guildCache.memberCount.toLocaleString().split(',')[0]+'k' : guildCache.memberCount %></span>
               </div>
             <p translate="no" class="card-title is-size-4"><%= a.name %>
-            <% if(guildCache.partnered === true) { %>
-              <span data-tooltip="Partnered Discord" data-tooltip-location="top">
-              <i class="fad fa-handshake bodyIcon"></i></span>
-            <% } %>
+          
             <% if(a.id == 852825880271257611) { %>
               <span data-tooltip="Official Server" data-tooltip-location="top">
               <i class="fad fa-server mr-1"></i></span>
@@ -354,8 +339,8 @@
             <p translate="no" class="card-text disbotsbotDesc"><%= a.shortDesc %></p>
           </div>
           <div class="card-footer">
-            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot">View</a>
-            <a title="DTL" href="/server/<%=a.id%>/join" class="btn  btn-bot">Join</a>
+            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot"><i class="fad fa-arrow-right"></i>&nbsp;View</a>
+            <a title="DTL" href="/server/<%=a.id%>/join" class="btn  btn-bot"><i class="fad fa-plus"></i>&nbsp;Join</a>
           </div>
         </div>
       </div>
@@ -375,7 +360,7 @@
     <p class="has-text-white title is-large"><i class="fad fa-play bodyIcon"></i>&nbsp;Stream Servers</p>
     <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
     </center>
-    <div class="columns is-multiline is-desktop is-variable is-7 pt-5">
+    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
      <% data.filter(a => bot.guilds.cache.get(a.id) && a.tags.includes('Stream')).sort((a, b) => b.votes - a.votes).slice(0, 6).map(a => {%>
      <% let guildCache = bot.guilds.cache.get(a.id) %>
       <div class="col-md-6 col-lg-4 pb-3">
@@ -406,8 +391,8 @@
             <p translate="no" class="card-text disbotsbotDesc"><%= a.shortDesc %></p>
           </div>
           <div class="card-footer">
-            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot">View</a>
-            <a title="DTL" href="/server/<%=a.id%>/join" class="btn  btn-bot">Join</a>
+            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot"><i class="fad fa-arrow-right"></i>&nbsp;View</a>
+            <a title="DTL" href="/server/<%=a.id%>/join" class="btn  btn-bot"><i class="fad fa-plus"></i>&nbsp;Join</a>
           </div>
         </div>
       </div>
@@ -429,7 +414,7 @@
     <p class="has-text-white title is-large"><i class="fad fa-camera bodyIcon"></i>&nbsp;Media Servers</p>
     <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
     </center>
-    <div class="columns is-multiline is-desktop is-variable is-7 pt-5">
+    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
      <% data.filter(a => bot.guilds.cache.get(a.id) && a.tags.includes('Media')).sort((a, b) => b.votes - a.votes).slice(0, 6).map(a => {%>
      <% let guildCache = bot.guilds.cache.get(a.id) %>
       <div class="col-md-6 col-lg-4 pb-3">
@@ -461,8 +446,8 @@
             <p translate="no" class="card-text disbotsbotDesc"><%= a.shortDesc %></p>
           </div>
           <div class="card-footer">
-            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot">View</a>
-            <a title="Disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot">Join</a>
+            <a title="Disbots" href="/server/<%=a.id%>" class="btn  btn-bot"><i class="fad fa-arrow-right"></i>&nbsp;View</a>
+            <a title="Disbots" href="/server/<%=a.id%>/join" class="btn  btn-bot"><i class="fad fa-plus"></i>&nbsp;Join</a>
           </div>
         </div>
       </div>

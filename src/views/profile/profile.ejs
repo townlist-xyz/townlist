@@ -162,7 +162,7 @@
       <% if(a.status == "Approved") { %>
         <div class="col-md-6 col-lg-4 pb-3">
           <div class="card disbots-card-custom bg-disbots border-white border-0">
-            <div class="disbots-card-custom-img" style="background-image: url(<%= a.backURL || "../../img/undefined_back.png" %>);"></div>
+            <div class="disbots-card-custom-img" style="background-image: url(<%= a.backURL || "../../img/undefined_ban.jpg" %>);"></div>
             <div class="disbots-card-custom-avatar">
               <img class="img-fluid" onerror="imgError(this);" src="<%=a.avatar%>" alt="Avatar" />
             </div>
@@ -191,7 +191,7 @@
       %>
         <div class="col-md-6 col-lg-4 pb-3">
           <div class="card disbots-card-custom bg-disbots border-white border-0">
-            <div class="disbots-card-custom-img" style="background-image: url(<%= a.backURL || "../../img/undefined_back.png" %>);"></div>
+            <div class="disbots-card-custom-img" style="background-image: url(<%= a.backURL || "../../img/undefined_ban.jpg" %>);"></div>
             <div class="disbots-card-custom-avatar">
               <img class="img-fluid" onerror="imgError(this);" src="<%=a.avatar%>" alt="Avatar" />
             </div>
@@ -236,7 +236,7 @@
       <div class="col-md-6 col-lg-4 pb-3">
         <div data-aos="fade-left">
         <div class="card disbots-card-custom bg-disbots border-white border-0">
-          <div class="disbots-card-custom-img" onerror="backImgError(this);" style="background-image: url(<%= guildCache.banner ? 'https://cdn.discordapp.com/banners/'+a.id+'/'+guildCache.banner+'?size=1024' : 'https://listing.discordtownshop.com/img/undefined_back.png' %>);" title="Town List" ></div>
+          <div class="disbots-card-custom-img" onerror="backImgError(this);" style="background-image: url(<%= guildCache.banner ? 'https://cdn.discordapp.com/banners/'+a.id+'/'+guildCache.banner+'?size=1024' : 'https://listing.discordtownshop.com/img/undefined_ban.jpg' %>);" title="Town List" ></div>
           <div class="disbots-card-custom-avatar">
             <img class="img-fluid" title="Discord Bot Avatar" onerror="imgError(this);" src="<%=a.icon%>" alt="Avatar" />
           </div>

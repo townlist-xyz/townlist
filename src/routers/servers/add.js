@@ -91,9 +91,10 @@ app.post("/add", global.checkAuth, async (req,res) => {
     client.channels.cache.get(global.config.server.channels.botlog).send(new MessageEmbed()
     .setTitle(`${emoji.success} Server Added`)
     .setDescription(`There is a new server added to the system!`)
-    .addField(`Link`, "[View Server](https://townlist.xyz/server/)"+checkGuilds.id)
+    .addField(`Link`, "[View Server](https://townlist.xyz/server/${checkGuilds.id})")
     .addField(`Added By`, `<@${checkGuilds.ownerID}>`)
     .addField(`Server`, `${guild.name}`)
+    .setURL(`https://townlist.xyz/server/${checkGuilds.id}`)
     .setColor('2f3136')
     )
     return res.send({ success: true, message: "Server succesfuly added." });

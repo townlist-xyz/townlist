@@ -75,13 +75,13 @@
                     data-tooltip-location="top"><i class="fad fa-server has-text-primary"></i></a>
                   <% } %>
                   <% if(botdata.promoted === "Promoted") { %>
-                    <span data-tooltip="Promoted Bot" data-tooltip-location="top"><i class="fas fa-stars has-text-warning"></i></span>
+                    <span data-tooltip="Promoted Bot" data-tooltip-location="top"><i class="fad fa-star has-text-warning"></i></span>
                   <% } %>
                   <% if(botdata.boosted === "Boosted") { %>
                     <span data-tooltip="Boosted Bot" data-tooltip-location="top"><img draggable="false" src="https://discordapp.com/assets/9ba64f1fa91ccde0eba506c1c33f3d1a.svg" width="32px"></span>
                   <% } %>
                   <% if(botdata.certificate === "Certified") { %>
-                    <span data-tooltip="Verified Bot" data-tooltip-location="top"><i class="fad fa-badge-check has-text-success"></i></span>
+                    <span data-tooltip="Certified Bot" data-tooltip-location="top"><i class="fad fa-certificate has-text-success"></i></span>
                   <% } %>
                 </h3>
                 <div>
@@ -208,6 +208,10 @@
                   <p style="background: rgb(8, 8, 8); color:#fff" class="box-2">Github</p>
                 </a>
                 <% } %>
+                  <a href="https://townlist.xyz/api/widget/<%= botdata.botID %>" class="is-flex mt-1">
+                  <div style="background: rgb(97, 124, 221)" class="box-2-p"><i class="fad fa-robot is-size-6 mt-1"></i></div>
+                    <p style="background: #7289da;color:#fff" class="box-2">Widget</p>
+                </a>
               
                 <div class="h6 mt-4">
                 <i class="fad fa-backspace is-size-6 mt-1"></i> Report

@@ -34,7 +34,9 @@ module.exports.run = async (client,message,args) => {
    .setColor("#2f3136")
    .addField("Server Count", `${b.serverCount || "N/A"}`, true)
    .addField("Owner(s)", `<@${b.ownerID}>\n${coowner.replace("<@>", "")}`, true)
+   
    .addField("Links", `[Invite](https://discord.com/oauth2/authorize?client_id=${b.botID}&scope=bot&permissions=8)${website}${discord}${github}`, true)
+      .setImage(`https://townlist.xyz/api/widget/${b.botID}/?iofjwijfoe`)
    message.channel.send(embed)
 };
 exports.conf = {

@@ -1,44 +1,5 @@
 <%- include('./meta.ejs') %>
-<style>
-.bg-indigo-600 {
-    --tw-bg-opacity: 1;
-    background: linear-gradient(-45deg, #ee7752, rgba(79,70,229, 1), #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-}
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-</style>
-<div class="bg-indigo-600">
-  <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-    <div class="is-flex is-align-items-center justify-content-between is-flex-wrap">
-      <div class="w-0 is-flex-grow-1" style="align-items: center">
-        <span class="is-flex p-2 rounded-lg bg-indigo-600" style="opacity: 0%!important">
-         
-        </span>
-        <p class="ml-3 font-medium text-white truncate">
-          <span>
-            <span class="badge badge-danger is-size-6">EVENT</span>&nbsp;100 bots very soon, add your bot now and get a chance to win nitro boost.
-          </span>
-        </p>
-      </div>
-      <div class="is-flex justify-content-end">
-        <a href="/dc" class="btn btn-disbots">
-          Join Our Discord
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+
 <head>
 
 
@@ -131,7 +92,7 @@
                 
                         
                           <a title="Town" class="dropdown-item" href="/user/<%=user.id%>"><i class="fad fa-user"></i>&nbsp;Profile</a>
-                          <a title="Town" class="dropdown-item" href="/certification"><i class="fad fa-badge-check"></i>&nbsp;Certification</a>
+                          <a title="Town" class="dropdown-item" href="/certification"><i class="fad fa-star"></i>&nbsp;Certification</a>
                           
                 <a title="DTL" class="dropdown-item" href="/server/add"><i class="fad fa-plus mr-1"></i> Add Server</a>
            

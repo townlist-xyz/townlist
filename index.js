@@ -24,6 +24,7 @@ client.on("guildMemberAdd", member => {
 })
 
 client.on("guildMemberAdd", async (member) => {
+   if (member.user.bot) return;
     let WELCOME = new Discord.MessageEmbed()
         .setTitle(`${emoji.member} | Welcome`)
         .setThumbnail(member.user.displayAvatarURL())
@@ -36,6 +37,7 @@ client.on("guildMemberAdd", async (member) => {
 });
 
 client.on("guildMemberAdd", async (member) => {
+   if (member.user.bot) return;
     let WELCOME = new Discord.MessageEmbed()
       
      
