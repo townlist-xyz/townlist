@@ -1013,7 +1013,9 @@ console.log(" ")
 console.log('\x1b[36m%s\x1b[0m', "[disbots.xyz]: Bot system loading...");
 app.use("/", require('./routers/api/api.js'))
 app.use("/", require('./routers/api/widget.js'));
+
 app.use("/", require('./routers/api/userWidget.js'));
+
 sleep(500)
 
 app.use((req, res) => {

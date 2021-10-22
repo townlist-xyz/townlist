@@ -6,10 +6,14 @@
 <div class="column">
 <center>
 <center>
-    <p class="has-text-white title is-large" style="text-shadow: 2px 2px 5px black;"><i class="fad fa-star has-text-warning"></i>&nbsp;Promoted Bots</p>
+    <p class="has-text-white title is-large"><i class="fad fa-star has-text-warning"></i>&nbsp;Promoted Bots</p>
 </center>
   </div>
+<<<<<<< HEAD
  <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
+=======
+  <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
+>>>>>>> origin/master
     <%
         let promrandomBots = botdata.filter(a => a.promoted == "Promoted")
         promrandomBots.forEach((val, key) => {
@@ -137,7 +141,11 @@
     <p class="has-text-white title is-large"><i class="fad fa-certificate bodyIcon"></i>&nbsp;Certified Bots</p>
     <p class="content has-text-white" style="margin-top: -20px;">Bots are ranked according to the votes they received.</p>
     </center>
+<<<<<<< HEAD
    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
+=======
+    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
+>>>>>>> origin/master
         <% botdata.filter(a => a.certificate == "Certified").sort((a, b) => b.votes - a.votes).slice(0, 6).map(a => {%>
       <div class="col-md-6 col-lg-4 pb-3">
         <div data-aos="fade-left">
@@ -287,7 +295,11 @@
     <p class="content has-text-white" style="margin-top: -20px;">Bots are listed according to random.</p>
     </center>
   </div>
+<<<<<<< HEAD
    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
+=======
+  <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
+>>>>>>> origin/master
     <%
         let randomBots = botdata.filter(a => a.status === "Approved")
         randomBots.forEach((val, key) => {
@@ -348,7 +360,11 @@
     <p class="has-text-white title is-large"><i class="fad fa-bomb bodyIcon"></i>&nbsp;Last Bumped Servers</p>
     <p class="content has-text-white" style="margin-top: -20px;">Servers are ranked according to the bump date they received.</p>
     </center>
+<<<<<<< HEAD
        <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
+=======
+    <div class="columns is-multiline is-desktop is-variable is-7 pt-5 mx-auto">
+>>>>>>> origin/master
      <% data.filter(a => bots.guilds.cache.get(a.id)).sort((a, b) => b.bump - a.bump).slice(0, 6).map(a => {%>
      <% let guildCache = bots.guilds.cache.get(a.id) %>
       <div class="col-md-6 col-lg-4 pb-3">

@@ -8,7 +8,9 @@ Canvas.registerFont(__dirname + "/../../fonts/WidgetFont.ttf", { family: "monosp
 router.get("/api/widget/:bot_id", async function(req, res) {
     const bot_id = req.params.bot_id;
     const bot = await bot_db.findOne({ botID: bot_id });
+
     const owner = await bot_db.findOne({ ownerName: bot_id });
+
     if (!bot) {
         res.status(404).send("Bot not found");
         return; 
@@ -26,6 +28,7 @@ router.get("/api/widget/:bot_id", async function(req, res) {
         ctx.drawImage(background, 0, 0, 400, 200);
         ctx.drawImage(icon, 20, 20, 64, 64);
 
+<<<<<<< HEAD
         ctx.font = "bold 28px monospace";
         ctx.fillStyle = "white";
         ctx.fillText(bot.username, 100, 38);
@@ -47,11 +50,29 @@ router.get("/api/widget/:bot_id", async function(req, res) {
         ctx.fillStyle = "white";
         ctx.fillText(`Not your average list`, 222, 193);
   
+=======
+        ctx.font = "bold 18px monospace";
+        ctx.fillStyle = "white";
+        ctx.fillText(bot.username, 100, 38);
+
+        // ctx.font = "12px monospace";
+        // ctx.fillStyle = "white";
+        // wrapText(ctx, bot.shortDesc, 100, 58, 275, 20);
+
+        ctx.font = "16px monospace";
+        ctx.fillStyle = "white";
+        ctx.fillText(`${bot.serverCount} servers`, 20, 109);
+        ctx.fillText(`${bot.votes} votes`, 20, 125);
+>>>>>>> origin/master
 
         res.setHeader('Content-Type', 'image/png');
         res.end(canvas.toBuffer());
     } catch (error) {
+<<<<<<< HEAD
         res.status(500).send(`Internal Server Error, stinky.: ${error.message}`);
+=======
+        res.status(500).send(`Internal Server Error: ${error.message}`);
+>>>>>>> origin/master
     }
 
     function wrapText(context, text, x, y, maxWidth, lineHeight) {
@@ -62,7 +83,11 @@ router.get("/api/widget/:bot_id", async function(req, res) {
             var testLine = line + words[n] + ' ';
             var metrics = context.measureText(testLine);
             var testWidth = metrics.width;
+<<<<<<< HEAD
             if (line0 > 12) {
+=======
+            if (line0 > 11) {
+>>>>>>> origin/master
                 line = "..."
                 context.fillText(line, x, y)
                 continue;
