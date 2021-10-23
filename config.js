@@ -5,7 +5,7 @@ module.exports = {
     owners: ["853157136992829470"],
     mongourl: "mongodb+srv://desixred:Ilovemykm@desixred.b8mot.mongodb.net/giveaway?retryWrites=true&w=majority",
     servers: {
-      token: "ODcxMzM5NjUzNzEyNzIzOTk4.YQZ4Sg.RNKGX81MVNPPR6YY9Fwqu-e9C08",
+      token: "ODcxMzM5NjUzNzEyNzIzOTk4.YQZ4Sg.zm2UhNDJkSfpd888d-2A9uqccqc",
       prefix: "s?"
     }
   },

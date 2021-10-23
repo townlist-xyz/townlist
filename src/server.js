@@ -914,6 +914,7 @@ sleep(500);
 app.use("/", require('./routers/index.js'))
 app.use("/", require('./routers/login-confirm.js'))
 app.use("/", require('./routers/partners.js'))
+app.use("/", require('./routers/queue.js'))
 app.use("/", require('./routers/dc.js'))
 app.use("/", require('./routers/reviews.js'))
 app.use("/", require('./routers/mini.js'))
@@ -1013,6 +1014,7 @@ console.log(" ")
 console.log('\x1b[36m%s\x1b[0m', "[disbots.xyz]: Bot system loading...");
 app.use("/", require('./routers/api/api.js'))
 app.use("/", require('./routers/api/widget.js'));
+
 
 app.use("/", require('./routers/api/userWidget.js'));
 

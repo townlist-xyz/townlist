@@ -1,5 +1,5 @@
-<%- include('static/head.ejs', { bot,user,path})  %>
-    <center><p><i class="fad fa-exclamation-triangle"></i> Please <b>make sure</b> to invite bots to the main server before approving them, or else the website won't run smooth.</p></center>
+<%- include('./admin/static/head.ejs', { bot,user,path})  %>
+    <center><p><i class="fad fa-exclamation-triangle"></i> Please <b>be aware</b> that these bots might be harmful for your server, so we recommend waiting till they get tested and approved.</p></center>
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
 
@@ -32,11 +32,9 @@
                                 <td><%= b.username %></td>
                                 <td><%= b.ownerName %></td>
                                 <td><%= b.prefix %></td>
-                                <td><button onclick="newtab('https://discord.com/api/oauth2/authorize?client_id=<%= b.botID %>&permissions=0&scope=bot&guild_id=891226286347923506')" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Invite (Main)</button>
-                                    <button onclick="newtab('https://discord.com/api/oauth2/authorize?client_id=<%= b.botID %>&permissions=0&scope=bot&guild_id=897200635139751966')" class="btn btn-info btn-sm"><i class="fas fa-plus"></i> Invite (testing server)</button> </td>
-                                <td class="text-center">
-                                    <button onclick="newtab('/admin/confirm/<%= b.botID %>')" class="btn btn-success btn-sm"><i class="fas fa-check"></i> Approve</button>
-                                    <button onclick="newtab('/admin/decline/<%= b.botID %>')" class="btn btn-danger btn-sm"><i class="fas fa-user-times"></i> Deny</button>
+                                <td><button onclick="newtab('https://discord.com/api/oauth2/authorize?client_id=<%= b.botID %>&permissions=0&scope=bot')" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Invite</button>
+                                  </td>
+                          
                                 </td>
                             </tr>
                             <% }) %>
