@@ -3,9 +3,9 @@
     "src/views/botlist/bot/bot.ejs": [
       {
         "id": "9241f6a9-995f-4d3c-970e-e23a29bca34e",
-        "line": 4,
-        "version": 175,
-        "index": 119
+        "line": 805,
+        "version": 1,
+        "index": 43872
       }
     ]
   }

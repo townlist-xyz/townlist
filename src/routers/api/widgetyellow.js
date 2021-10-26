@@ -5,7 +5,7 @@ const request = require("node-fetch");
 const bot_db = require("../../database/models/botlist/bots");
 
 Canvas.registerFont(__dirname + "/../../fonts/WidgetFont.ttf", { family: "monospace" });
-router.get("/api/widget/:bot_id", async function(req, res) {
+router.get("/api/widget/yellow/:bot_id", async function(req, res) {
     const bot_id = req.params.bot_id;
     const bot = await bot_db.findOne({ botID: bot_id });
 
@@ -18,7 +18,7 @@ router.get("/api/widget/:bot_id", async function(req, res) {
         return; 
     }
 
-    let background = await Canvas.loadImage(__dirname + "/../../images/widget.png");
+    let background = await Canvas.loadImage(__dirname + "/../../images/widgetyellow.png");
     try {
         let avatar = await request(bot.avatar.replace("webp", "png"));
         avatar = await avatar.buffer();
@@ -28,29 +28,25 @@ router.get("/api/widget/:bot_id", async function(req, res) {
         let ctx = canvas.getContext("2d");
 
         ctx.drawImage(background, 0, 0, 400, 200);
-        ctx.drawImage(icon, 20, 20, 64, 64);
+        ctx.drawImage(icon, 170, 30, 64, 64);
 
 
-        ctx.font = "bold 28px monospace";
-        ctx.fillStyle = "white";
-        ctx.fillText(bot.username, 100, 38);
+        ctx.font = "bold 22px monospace";
+        ctx.fillStyle = "black";
+        ctx.fillText(bot.username, 158, 19);
 
-        ctx.font = "12px monospace";
-        ctx.fillStyle = "white";
-        wrapText(ctx, bot.shortDesc, 100, 58, 275, 20);
+     
 
         ctx.font = "16px monospace";
-        ctx.fillStyle = "white";
-        ctx.fillText(`${bot.serverCount || "N/A"} servers`, 20, 109);
-        ctx.fillText(`${bot.votes} votes`, 20, 132);
-           ctx.font = "16px monospace";
         ctx.fillStyle = "gray";
-            ctx.fillText(`${bot.tags || "N/A"}`, 20, 155);
+        ctx.fillText(`${bot.serverCount || "N/A"} servers`, 152, 125);
+
         
+        ctx.fillText(`${bot.votes} votes`, 167, 155);
 
         ctx.font = "bold 13px monospace";
-        ctx.fillStyle = "white";
-        ctx.fillText(`Not your average list`, 222, 193);
+        ctx.fillStyle = "black";
+        ctx.fillText(`Listed on townlist.xyz`, 120, 191);
   
 
 

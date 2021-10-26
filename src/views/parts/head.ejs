@@ -1,9 +1,4 @@
 <%- include('./meta.ejs') %>
-
-<head>
-
-
-
     <nav class="navbar navbar-expand-lg navbar-dark p-2 pl-4 pr-4 bg-disbots z">
         <div class="container">
         <a title="DTL" class="navbar-brand logoholder"><img id="logoimg" style="height:55px; width:55px;" src="../../img/logo.png" alt="DTL"/></a>
@@ -59,7 +54,7 @@
             </div>
         </li>
           </ul>
-          <ul class="navbar-nav ml-auto">
+               <ul class="navbar-nav ml-auto">
             <% 
             let languages = global.config.website.languages;
             %>            
@@ -71,8 +66,8 @@
          <div title="Town" class="dropdown-menu animate slideIn" style="max-width:220px!important" aria-labelledby="navbarDropdown">
             <% languages.map(x => { %>
                 <a href="#" translate="no" onclick="doGTranslate('en|<%= x.code %>')" title="DTL" class="dropdown-item">
-                <img src="https://www.countryflags.io/<%= x.flag %>/flat/32.png">
-                    &nbsp;<%= x.name %>
+                
+        <%= x.name %>
                 </a>
                 <% }) %>
                 </div>

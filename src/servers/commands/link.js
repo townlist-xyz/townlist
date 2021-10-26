@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
         , true)
       .addField("Emoji Count", client.guilds.cache.get(args[0]).emojis.cache.size
         , true)
-        .setImage(`https://townlist.xyz/api/widget/${b.id}`)
+        .setImage(`https://townlist.xyz/api/widget/server/${b.id}`)
       .setColor("#2f3136")
       .addField("Owner(s)", `<@${b.ownerID}>\n${coowner.replace("<@>", "")}`, true)
       .addField("Invite Link:", `${invitelink || "No Server Invite"}`, true)

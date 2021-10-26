@@ -19,7 +19,6 @@ let hm = new mongoose.Schema({
   analytics: Object,
   analytics_visitors: Number,
   analytics_joins: Number,
-  country: Object,
   rates: Object
 });
 

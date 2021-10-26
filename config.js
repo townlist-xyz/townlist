@@ -1,11 +1,11 @@
 module.exports = {
   bot: {
-    token: "ODU3OTE1NjcxODk5MTQ0MjQy.YNWiOw.W7lUsXG_-VySo37gG-1qBIHnTVM",
+    token: "ODU3OTE1NjcxODk5MTQ0MjQy.YNWiOw.rXjP0XDOJH0O3HrXcbzRVA_eKb0",
     prefix: "d!",
     owners: ["853157136992829470"],
     mongourl: "mongodb+srv://desixred:Ilovemykm@desixred.b8mot.mongodb.net/giveaway?retryWrites=true&w=majority",
     servers: {
-      token: "ODcxMzM5NjUzNzEyNzIzOTk4.YQZ4Sg.zm2UhNDJkSfpd888d-2A9uqccqc",
+      token: "ODcxMzM5NjUzNzEyNzIzOTk4.YQZ4Sg.tILfhEIR__xhIFY3OOWcky0T94I",
       prefix: "s?"
     }
   },

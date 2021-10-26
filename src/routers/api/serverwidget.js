@@ -2,42 +2,55 @@ const express = require('express');
 const router = express.Router();
 const Canvas = require("canvas");
 const request = require("node-fetch");
-const guild_db = require("../../database/models/servers/server.js");
+const guild_db = require("../../database/models/servers/server");
 
 Canvas.registerFont(__dirname + "/../../fonts/WidgetFont.ttf", { family: "monospace" });
-router.get("/api/userWidget/:guildID", async function(req, res) {
-     const guild_id = req.params.guild_id;
-    const guild = await guild_db.findOne({ guildID: guild_id });
+router.get("/api/widget/server/:guildID", async function(req, res) {
+    const guild_id = req.params.guildID;
+    const guild = await guild_db.findOne({ id: req.params.guildID });
 
 
-    let background = await Canvas.loadImage(__dirname + "/../../images/widget.png");
+
+    let background = await Canvas.loadImage(__dirname + "/../../images/widgetsmall.png");
     try {
-        let avatar = await request(guild.icon.replace("webp", "png"));
-        avatar = await avatar.buffer();
-        let icon = await Canvas.loadImage(avatar);
-        ctx.font = "bold 28px monospace";
-        ctx.fillStyle = "white";
-        ctx.fillText(guild.name, 100, 38);
+   
 
-        ctx.font = "12px monospace";
+        let canvas = Canvas.createCanvas(400, 200);
+        let ctx = canvas.getContext("2d");
+
+        ctx.drawImage(background, 0, 0, 400, 200);
+      
+
+
+        ctx.font = "bold 22px monospace";
         ctx.fillStyle = "white";
-        wrapText(ctx, guild.shortDesc, 100, 58, 275, 20);
+        ctx.fillText(guild.name, 95, 25);
+
+     
 
         ctx.font = "16px monospace";
+        ctx.fillStyle = "gray";
+        ctx.fillText(`${guild.bumps || "N/A"} bumps`, 91, 97);
+
+        
+        ctx.fillText(`${guild.votes} votes`, 220, 97);
+ctx.font = "bold 12px monospace"
+        ctx.fillText(`${guild.link}`, 108, 124);
+
+        ctx.font = "bold 13px monospace";
         ctx.fillStyle = "white";
-        ctx.fillText(`${guild.bumps || "N/A"} bumps`, 20, 109);
-        ctx.fillText(`${bot.votes} votes`, 20, 125);
-        ctx.fillText(`${guild.invitelink}`, 20, 142);
-
-      
-      
-
+        ctx.fillText(`Listed on townlist.xyz`, 120, 192);
   
+
 
         res.setHeader('Content-Type', 'image/png');
         res.end(canvas.toBuffer());
     } catch (error) {
-        res.status(500).send(`Internal Server Error: ${error.message}`);
+
+
+        res.status(500).send(`Internal Server Error, stinky.: ${error.message}`);
+
+     
     }
 
     function wrapText(context, text, x, y, maxWidth, lineHeight) {
@@ -48,7 +61,8 @@ router.get("/api/userWidget/:guildID", async function(req, res) {
             var testLine = line + words[n] + ' ';
             var metrics = context.measureText(testLine);
             var testWidth = metrics.width;
-            if (line0 > 12) {
+
+            if (line0 > 11) {
                 line = "..."
                 context.fillText(line, x, y)
                 continue;

@@ -579,14 +579,9 @@ app.get("/credits", checkMaintence, (req, res) => {
     roles
   });
 });
-app.get("/rewards", checkMaintence,checkAuth, async (req, res) => {
-  renderTemplate(res, req, "/botlist/rewards.ejs", {
-    config,
-    req,
-    user: req.isAuthenticated() ? req.user : null,
-    roles
-  });
-});
+
+
+
 app.use("/", require('./routers/botlist/apps/cerificate-app.js'))
 
 
@@ -914,7 +909,7 @@ sleep(500);
 app.use("/", require('./routers/index.js'))
 app.use("/", require('./routers/login-confirm.js'))
 app.use("/", require('./routers/partners.js'))
-app.use("/", require('./routers/queue.js'))
+
 app.use("/", require('./routers/dc.js'))
 app.use("/", require('./routers/reviews.js'))
 app.use("/", require('./routers/mini.js'))
@@ -952,6 +947,7 @@ app.use("/", require('./routers/botlist/vote.js'))
 app.use("/", require('./routers/botlist/bot/view.js'))
 app.use("/", require('./routers/botlist/bot/announcements.js'))
 app.use("/", require('./routers/botlist/bot/rewards.js'))
+app.use("/", require('./routers/servers/server/rewards.js'))
 app.use("/", require('./routers/botlist/bot/edit.js'))
 app.use("/", require('./routers/botlist/bot/analytics.js'))
 app.use("/", require('./routers/botlist/apps/cerificate-app.js'))
@@ -1014,9 +1010,13 @@ console.log(" ")
 console.log('\x1b[36m%s\x1b[0m', "[disbots.xyz]: Bot system loading...");
 app.use("/", require('./routers/api/api.js'))
 app.use("/", require('./routers/api/widget.js'));
+app.use("/", require('./routers/api/widget1.js'));
+app.use("/", require('./routers/api/widgetyellow.js'));
+app.use("/", require('./routers/api/widget1.js'));
+app.use("/", require('./routers/api/widgetsmall.js'));
+app.use("/", require('./routers/api/widgetred.js'));
 
-
-app.use("/", require('./routers/api/userWidget.js'));
+app.use("/", require('./routers/api/serverwidget.js'));
 
 sleep(500)
 

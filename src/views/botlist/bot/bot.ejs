@@ -1,4 +1,4 @@
-<%- include('../../parts/head', {bot, user, path}) %>
+ <%- include('../../parts/head', {bot, user, path}) %>
 <title><%= botdata.username %> | Discord Bots</title>
 <head>
     <meta property="og:site_name" content="Powered by townlist.xyz">
@@ -24,17 +24,14 @@
   align-items: center;
   text-align: center;
 }
-
 .separator::after {
   content: '';
   flex: 2;
   border-bottom: 1px solid #fff;
 }
-
 .separator:not(:empty)::before {
   margin-right: .55em;
 }
-
 .separator:not(:empty)::after {
   margin-left: .55em;
 }
@@ -81,7 +78,7 @@
                     <span data-tooltip="Boosted Bot" data-tooltip-location="top"><img draggable="false" src="https://discordapp.com/assets/9ba64f1fa91ccde0eba506c1c33f3d1a.svg" width="32px"></span>
                   <% } %>
                   <% if(botdata.certificate === "Certified") { %>
-                    <span data-tooltip="Certified Bot" data-tooltip-location="top"><i class="fad fa-certificate has-text-success"></i></span>
+                    <span data-tooltip="Verified Bot" data-tooltip-location="top"><i class="fad fa-certificate has-text-success"></i></span>
                   <% } %>
                 </h3>
                 <div>
@@ -104,8 +101,6 @@
                         <p class="box-2">Refresh Data</p>
                     </a>
                 </form>
-
-
              <% } %>
              <% } %>
               <div class="h6 mt-4">
@@ -208,14 +203,34 @@
                   <p style="background: rgb(8, 8, 8); color:#fff" class="box-2">Github</p>
                 </a>
                 <% } %>
-                  <a href="https://townlist.xyz/api/widget/<%= botdata.botID %>" class="is-flex mt-1">
-                  <div style="background: rgb(97, 124, 221)" class="box-2-p"><i class="fad fa-robot is-size-6 mt-1"></i></div>
-                    <p style="background: #7289da;color:#fff" class="box-2">Widget</p>
-                </a>
-              
-                <div class="h6 mt-4">
-                <i class="fad fa-backspace is-size-6 mt-1"></i> Report
+               <div class="h6 mt-4">
+                <i class="fad fa-icons-alt"></i> Widgets
               </div>
+                <p style="color:gray;">You can use our newly released <b>widgets</b> for your website or bot description.</p>
+  <a href="https://townlist.xyz/api/widget/<%= botdata.botID %>/" class="is-flex mt-1">
+                  <div style="background: rgb(97, 124, 221)" class="box-2-p"><i class="fad fa-robot is-size-6 mt-1"></i></div>
+                  <p style="background: #7289da;color:#fff" class="box-2">Widget</p>
+                </a>
+                <a href="https://townlist.xyz/api/widget/yellow/<%= botdata.botID %>/" class="is-flex mt-1">
+                  <div style="background: rgb(254, 231, 92)" class="box-2-p"><i class="fad fa-robot is-size-6 mt-1"></i></div>
+                  <p style="background: #FFFF66;color:#fff" class="box-2">Yellow Widget</p>
+                </a>
+                  <a href="https://townlist.xyz/api/widget/simple/<%= botdata.botID %>/" class="is-flex mt-1">
+                  <div style="background:#333333" class="box-2-p"><i class="fad fa-robot is-size-6 mt-1"></i></div>
+                  <p style="background: #222222;color:#fff" class="box-2">Simple Widget</p>
+                </a>
+                           <a href="https://townlist.xyz/api/widget/small/<%= botdata.botID %>/" class="is-flex mt-1">
+                  <div style="background:#444444" class="box-2-p"><i class="fad fa-robot is-size-6 mt-1"></i></div>
+                  <p style="background: #333333;color:#fff" class="box-2">Small Widget</p>
+                </a>
+                    <a href="https://townlist.xyz/api/widget/red/<%= botdata.botID %>/" class="is-flex mt-1">
+                  <div style="background:#FF3333" class="box-2-p"><i class="fad fa-robot is-size-6 mt-1"></i></div>
+                  <p style="background: #ED4245;color:#fff" class="box-2">Red Widget</p>
+                </a>
+                <div class="h6 mt-4">
+                <i class="fad fa-siren-on"></i> Report
+              </div>
+              <p style="color:gray;">You can report bots that are <b>against</b> our rules.</p>
               <a href="/<%= botdata.botID %>/report" class="is-flex mt-1">
                   <div style="background: rgb(209, 25, 25);" class="box-2-p"><i class="fad fa-backspace is-size-6 mt-1"></i></div>
                   <p style="background: rgb(255, 0, 0);" class="box-2">Report</p>
@@ -243,7 +258,6 @@
         </div>
       </div>
       <% if(botdata.status == "Approved") { %>
-
       <hr style="opacity: 5%;">
       <h4 class="has-text-white">
         Ratings & Reviews
@@ -369,7 +383,6 @@
   <% } %>
   <% } %>
   <% } %>
-
       <br>
     <% if(botdata.rates) { %>
     <div id="rates-box">
@@ -387,7 +400,6 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-
                     <div class="rating-cards col-md-12">
                         <div class="ml-4 media p-2">
                           <img class="mr-3 rounded-circle" alt="disbots-xyz | Rating System" onError="imgError(this)" src="<%= userRate ? userRate.avatarURL() : '../../img/undefined_logo.png' %>" />
@@ -408,7 +420,6 @@
                                 <% } else { %>
                                 <span style="color: var(--body-text)" translate="no"><%= c.message %></span>
                                 <% } %>
-
                             </div>
                              <% if(req.user && userRate) { %>
                              <div class="buttons mr-5" style="float: right">
@@ -443,7 +454,6 @@
                                   </div>
                                 </div>
                              <% }} %>
-
                              <% if(userRate.id == req.user.id) { %>
                               &nbsp;<button class="btn btn-disbots" data-toggle="modal" data-target="#edit<%= userRate.id %>" id="editButton"><i class="fad fa-pencil"></i>&nbsp;Edit</button>
                               <% if(req.user.id != botdata.ownerID && !botdata.coowners.includes(req.user.id)) { %>
@@ -491,9 +501,7 @@
                             
                             
                         </div>
-
                     </div>
-
                     <% if(c.reply) { %>
                     <div class="rating-cards col-md-12">
                     <div class="ml-5">
@@ -505,7 +513,6 @@
                                       <a href="/bot/<%= botdata.botID %>" class="is-size-5"><span translate="no" style="color: var(--body-text)"><%= botdata.username %>#<%= botdata.discrim %></span> <small class="text-muted">Replying to <%= userRate ? userRate.tag : 'undefined#0000'%></small></a>
                                       &nbsp;
                                     </div>
-
                                 </div> 
                                 <span style="color: var(--body-text)" translate="no"><%= c.reply %></span>                           
                              </div>
@@ -514,7 +521,6 @@
                              <div class="buttons mr-5" style="margin-right: 10px; float: right">
                               <button onclick="replyTo('<%= userRate.id %>')" data-toggle="modal" data-target="#editReply<%= userRate.id %>" id="replyButton" class="btn btn-disbots"><i class="fad fa-pencil"></i>&nbsp;Edit</button>
                               &nbsp;<button onclick="clickOnDeletReply('<%= userRate.id %>')" id="replyDeleteButton<%= userRate.id%>" class="btn btn-disbots"><i class="fad fa-trash"></i>&nbsp;Delete</button>
-
                                 <div class="modal fade" id="editReply<%= userRate.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                   <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content" style="background-color: var(--bg-card)">
@@ -545,16 +551,12 @@
                              <% } %>
                             <% } %>
                             </div>
-
 </div>
 </div>
-
                   <% } %>
                   </div>
-
 </div>
         </div>
-
     </div>
    <% } %>
   </div>
@@ -562,8 +564,6 @@
 </div>
 </div>
 </div>
-
-
 <script>
     function clickOnReply(userID) {
         $("#myReplyButton" + userID).attr("disabled", true);
@@ -777,7 +777,6 @@
     } 
 </script>
                                 
-
 <div class="d-flex justify-content-center mt-4">
 <%
 if (page != 1) {
