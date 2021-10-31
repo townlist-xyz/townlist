@@ -25,7 +25,7 @@ app.get("/admin/confirm/:botID", global.checkAuth, async (req, res) => {
             status: "Approved",
             Date: Date.now(),
         }
-    }, function(err, docs) {})
+    })
     client.users.fetch(req.params.botID).then(bota => {
         client.channels.cache.get(global.config.server.channels.botlog).send(new MessageEmbed()
         .setTitle(`${emoji.success} Bot Approved`)

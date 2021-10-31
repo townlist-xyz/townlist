@@ -2843,7 +2843,7 @@ select.language:hover {
 .list-group-flush .list-group-item {
     border-right: 0;
     border-left: 0;
-    border-radius: 0;
+    border-radius: d;
     background-color: #23272a;
 }
 

@@ -33,7 +33,7 @@ client.on("guildMemberAdd", async (member) => {
         .setColor('2f3136')
         .setTimestamp()
         .setFooter(`© TownList | ${member.user.username}`)
-    client.channels.cache.get('891706457223987221').send(WELCOME)
+    client.channels.cache.get('904370280456134697').send(WELCOME)
 });
 
 client.on("guildMemberAdd", async (member) => {
@@ -45,7 +45,7 @@ client.on("guildMemberAdd", async (member) => {
         .setColor('2f3136')
         .setTimestamp()
         .setFooter('© TownList')
-    client.channels.cache.get('891226286587015223').send(WELCOME)
+    client.channels.cache.get('904370620257681459').send(WELCOME)
 });
 
 
@@ -58,7 +58,7 @@ client.on("guildMemberRemove", async (member) => {
         .setColor('2f3136')
         .setTimestamp()
         .setFooter('© TownList | Thanks for joining')
-    client.channels.cache.get('891706457223987221').send(BYE)
+    client.channels.cache.get('904370280456134697').send(BYE)
 });
 
 

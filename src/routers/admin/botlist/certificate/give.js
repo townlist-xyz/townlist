@@ -18,7 +18,7 @@ app.get("/admin/certificate/give/:botID", global.checkAuth, async (req, res) => 
       $set: {
         certificate: "Certified",
       }
-    }, function(err, docs) { })
+    })
   let botdata = await botsdata.findOne({
     botID: req.params.botID
   });

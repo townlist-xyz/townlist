@@ -58,7 +58,7 @@ let cooldown = 1800000;
 	const correctButton = new Discord.MessageEmbed()
 	.setTitle(`${emoji.success} Successful Operation`)
   .setDescription(`You have successfully bumped **${message.guild.name}**, therefore your server will be bumped on our list and your server will be on the top.`)
-  .setImage(`https://cdn.discordapp.com/attachments/891226286587015223/902590471912710164/Discord_Rich_Presence_for_Figma_Community_2.png`)
+  .setImage(`https://cdn.discordapp.com/attachments/897174637803343934/904078461184905256/Rectangle_3bumpedups.png`)
 	.setColor("2f3136")
 	.setAuthor(message.author.username, message.author.avatarURL({ dynamic: true }))
     const controlEmbed = new Discord.MessageEmbed()

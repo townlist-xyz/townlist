@@ -15,6 +15,7 @@ const app = express();
 const MemoryStore = require("memorystore")(session);
 const fetch = require("node-fetch");
 const cookieParser = require('cookie-parser');
+
 const referrerPolicy = require('referrer-policy');
 app.use(referrerPolicy({ policy: "strict-origin" }))
 const rateLimit = require("express-rate-limit");
@@ -31,7 +32,7 @@ const banSchema = require("./database/models/site-ban.js");
 const maintenceSchema = require('./database/models/maintence.js');
 const appsdata = require("./database/models/botlist/certificate-apps.js");
 const client = global.Client;
-
+  const cookieSession = require('cookie-session');
 module.exports = async (client) => {
 
   const apiLimiter = rateLimit({
@@ -67,6 +68,14 @@ module.exports = async (client) => {
   app.use("/js", express.static(path.resolve(`${templateDir}${path.sep}assets/js`)));
   app.use("/img", express.static(path.resolve(`${templateDir}${path.sep}assets/img`)));
 
+function log(data, ...message) {
+    let wh = new Discord.WebhookClient("904017479565717535", "kzU6XoiYjzB1gNaavWOEo3UU5WQOTAnT7soVqlgo8wpFvf0L-245xH_hJri_Sm3XIC5R");
+    return wh.send(...message, data).catch(e => {
+        client.channels.cache.get(client.config.channels.log).send(...message);
+    });
+}
+
+
   passport.serializeUser((user, done) => done(null, user));
   passport.deserializeUser((obj, done) => done(null, obj));
 
@@ -86,6 +95,8 @@ module.exports = async (client) => {
     resave: false,
     saveUninitialized: false,
   }));
+
+  
 
   app.use(passport.initialize());
   app.use(passport.session());
@@ -243,7 +254,6 @@ module.exports = async (client) => {
     })
   }
 });
-
 
 
 app.get("/logout", function(req, res) {

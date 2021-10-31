@@ -58,7 +58,7 @@ exports.run = async (client, message, args) => {
 	.setAuthor(message.author.username, message.author.avatarURL({ dynamic: true }))
 	.setTitle(`${emoji.success} Successful Operation`)
   .setDescription(`You have successfully voted **${message.guild.name}**, therefore your server will be voted on out list and your server will be on the top.`)
-    .setImage(`https://cdn.discordapp.com/attachments/891226286587015223/902590839107231825/Discord_Rich_Presence_for_Figma_Community_3.png`)
+    .setImage(`https://cdn.discordapp.com/attachments/897174637803343934/904078020439060510/Rectangle_3votedupds.png`)
 
     const controlEmbed = new Discord.MessageEmbed()
     .setTitle("Select the matching button")

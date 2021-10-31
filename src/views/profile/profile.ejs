@@ -1,7 +1,8 @@
 <%- include('../parts/head', {bot, user, path}) %>
 <title><%= member.username %> | Profile</title>
 <head>
-    <meta name="og:title" content="<%= member.username %> | Profile">
+  <meta property="og:site_name" content="Powered by townlist.xyz">
+  <meta name="og:title" content="<%= member.username %> | Profile">
     <meta name="og:description" content="<%= pdata ? (pdata.biography ? pdata.biography : member.username+' has no biography') : member.username+' has no biography.'%>">
     <meta name="og:image" content="https://cdn.discordapp.com/avatars/<%=member.id%>/<%=member.avatar%>.png">
 </head>

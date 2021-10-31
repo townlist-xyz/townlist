@@ -1,10 +1,11 @@
- <%- include('../../parts/head', {bot, user, path}) %>
+ <%- include('../../parts/head', {bot, user, path, botdata}) %>
 <title><%= botdata.username %> | Discord Bots</title>
 <head>
     <meta property="og:site_name" content="Powered by townlist.xyz">
     <meta property="og:title" content="<%= botdata.username %>">
     <meta property="og:description" content="<%= botdata.shortDesc %>">
     <meta property="og:image" content="<%= botdata.avatar %>">
+    <link rel="shortcut icon" href="<%= botdata.avatar || 'https://cdn.discordapp.com/attachments/891226286587015223/904058479554211941/toyugtutan.png' %>">
 </head>
 <br>
 

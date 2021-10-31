@@ -18,7 +18,7 @@ app.post("/admin/certificate/delete/:botID", global.checkAuth, async (req, res) 
         $set: {
             certificate: "None",
         }
-    }, function(err, docs) {})
+    })
     let botdata = await botsdata.findOne({
         botID: req.params.botID
     });
