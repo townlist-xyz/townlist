@@ -73,14 +73,15 @@ console.log("[disbots.xyz]: Botlist/Add Bot router loaded.");
       })
       res.redirect(`?success=true&message=Your bot has been successfully added to the system.&botID=${rBody['botID']}`)
       client.users.fetch(rBody['botID']).then(a => {
-      client.channels.cache.get(channels.botlog).send(new MessageEmbed()
+
+      const pendembed = new MessageEmbed()
         .setTitle(`${emoji.offline} Bot Pending`)
        .setDescription(`${a.tag} has been added and it is pending as a bot in our listing system.`)
        .addField(`${emoji.link} Link`, `[Link](https://townlist.xyz/bot/${a.id}/)`)
     .addField(`Added By`, `<@${req.user.id}>`)
     .addField(`Bot Name`, `${a.tag}`)
     .setColor('2f3136')
-    )
+      client.channels.cache.get(channels.botlog).send(`**Thanks for adding your bot, <@${req.user.id}>**`, pendembed)    
 
       })
     })

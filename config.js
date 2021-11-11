@@ -1,11 +1,11 @@
 module.exports = {
   bot: {
-    token: "ODU3OTE1NjcxODk5MTQ0MjQy.YNWiOw.B1bvlp7PcNUfK4FvkC7dP4Y_eG4",
+    token: "ODU3OTE1NjcxODk5MTQ0MjQy.YNWiOw.a4Qj2lI_MmV6lSeTve4YDSxpWxo",
     prefix: "d!",
     owners: ["853157136992829470"],
-    mongourl: "mongodb+srv://desixred:shitbitch@townlist.5lx5b.mongodb.net/dbl",
+    mongourl: "mongodb+srv://desixred:Ilovemykmlol@desixred.b8mot.mongodb.net/giveaway?retryWrites=true&w=majority",
     servers: {
-      token: "ODcxMzM5NjUzNzEyNzIzOTk4.YQZ4Sg.ZlkdoSmNceV3M4000fQI_4BxCfI",
+      token: "ODcxMzM5NjUzNzEyNzIzOTk4.YQZ4Sg.0qFnZCCEmyImNjCljkyWK7-aatA",
       prefix: "s?"
     }
   },
@@ -127,22 +127,22 @@ module.exports = {
     }
   },
 
-  server: {
+    server: {
     id: "891226286347923506", // DisBots.xyz Server ID
-    invite: "https://discord.gg/gW9jRtr2cf",
+    invite: "hhttps://discord.gg/HFdfCjjywd",
     dblinvite: "https://discord.com/api/oauth2/authorize?client_id=857915671899144242&permissions=8&redirect_uri=https%3A%2F%2Ftownlist.xyz%2Fcallback&scope=bot",
     roles: {
       yonetici: "891226286347923515", // Team roleid
-      manager: "891226286347923514",// Community Manager Role Id
+      manager: "907495718154010624",// Community Manager Role Id
       booster: "895513200823504897", // Server booster Role ID
-      sponsor: "891324380058112072", // Sponsor Role id
-      community: "891269157927124992", // Community Role id
+      sponsor: "", // Sponsor Role id
+      community: "907496174813069374", // Community Role id
       supporter: "",// Supporter Role id
       partnerRole: "", // Partner Role id
-      site_creator: "891226286347923515",// Site Creator Role id
+      site_creator: "907493965840941057",// Site Creator Role id
       administrator: "891226286347923511", // Team Role id Again
-      moderator: "891226286347923515", // bot tester Role id
-      moderatorrole: "891226286347923513", // Server Moderator Role id
+      moderator: "907496469542604810", // bot tester Role id
+      moderatorrole: "907496469542604810", // Server Moderator Role id
       profile: {
         sitecreator:"891226286347923515", // Site Creator Role id
         booster: "",// Server booster Role ID
@@ -164,26 +164,26 @@ module.exports = {
         twentyInvite: "20 INVITES"
       },
       botlist: {
-        ownerserver: "896594352044916777", // Server Owner Role ID
-        developer: "904060120651165738", // Bot Developer Role ID
-        certified_developer: "904059145999777842",// Certified Bot Developer Role ID
-        boosted_developer: "891324183135531008", // Boosted Bot Developer Role ID
-        promoted_developer: "891324103376650250",// Promoted Bot Developer Role ID
+        ownerserver: "907497128862035988", // Server Owner Role ID
+        developer: "907497538318381087", // Bot Developer Role ID
+        certified_developer: "907497647861039135",// Certified Bot Developer Role ID
+        boosted_developer: "907498318077259808", // Boosted Bot Developer Role ID
+        promoted_developer: "907498255699570708",// Promoted Bot Developer Role ID
         premium_developer: "891324006039453756",// Premium Server Owner Role ID
-        bot: "891226286347923507",// Approved Bot Role ID
-        boosted_bot: "891325791479140392", // Boosted Bot Role ID
-        promoted_bot: "891326174985351239",// Promoted Bot Role ID
-        certified_bot: "904064076395728926"// Certified Bot Role ID
+        bot: "907498396552675380",// Approved Bot Role ID
+        boosted_bot: "", // Boosted Bot Role ID
+        promoted_bot: "",// Promoted Bot Role ID
+        certified_bot: "907498996489146410"// Certified Bot Role ID
       }
     },
     channels: {
-      codelog: "904369886183170061", // Code Log
-      login: "904369886183170061",// Login Log
-      webstatus: "904369886183170061",// Website Status Log
-      uptimelog: "904369886183170061",// Uptime Log
-      botlog: "904369937236254800",// bot Log
-      reportlog: "904372537146892338",// bot report Log
-      votes: "904370162470363166"// Vote Log Log
+      codelog: "908069115695083551", // Code Log
+      login: "908069115695083551",// Login Log
+      webstatus: "908069115695083551",// Website Status Log
+      uptimelog: "907501608747814923",// Uptime Log
+      botlog: "907501517458800651",// bot Log
+      reportlog: "908069161538838618",// bot report Log
+      votes: "908069216781991937"// Vote Log Log
     }
   }
 

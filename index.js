@@ -20,7 +20,7 @@ const Mongoose = require("mongoose")
 /*=======================================================================================*/
 client.on("guildMemberAdd", member => {
    if (member.user.bot) return;
-    member.roles.add('891269157927124992')
+    member.roles.add('907496174813069374')
 })
 
 client.on("guildMemberAdd", async (member) => {
@@ -33,7 +33,7 @@ client.on("guildMemberAdd", async (member) => {
         .setColor('2f3136')
         .setTimestamp()
         .setFooter(`© TownList | ${member.user.username}`)
-    client.channels.cache.get('904370280456134697').send(WELCOME)
+    client.channels.cache.get('908068636177096714').send(WELCOME)
 });
 
 client.on("guildMemberAdd", async (member) => {
@@ -45,7 +45,7 @@ client.on("guildMemberAdd", async (member) => {
         .setColor('2f3136')
         .setTimestamp()
         .setFooter('© TownList')
-    client.channels.cache.get('904370620257681459').send(WELCOME)
+    client.channels.cache.get('908069830060548136').send(WELCOME)
 });
 
 
@@ -58,7 +58,7 @@ client.on("guildMemberRemove", async (member) => {
         .setColor('2f3136')
         .setTimestamp()
         .setFooter('© TownList | Thanks for joining')
-    client.channels.cache.get('904370280456134697').send(BYE)
+    client.channels.cache.get('908068636177096714').send(BYE)
 });
 
 
